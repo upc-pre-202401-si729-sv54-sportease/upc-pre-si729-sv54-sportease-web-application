@@ -19,9 +19,9 @@ import {MatCard, MatCardContent, MatCardHeader, MatCardTitle, MatCardSubtitle} f
 @NgModule({
   declarations: [
     AppComponent,
-    SidenavComponent,
     HomeAdministratorsComponent,
-    HomeStudentsComponent
+    HomeStudentsComponent,
+    SidenavComponent,
   ],
   imports: [
     BrowserModule,

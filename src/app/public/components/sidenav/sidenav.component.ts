@@ -1,13 +1,14 @@
 import {Component, OnInit} from '@angular/core';
+import {AdministratorService} from "../../../profiles/services/administrator/administrator.service";
 import {Administrator} from "../../../profiles/model/administrator/administrator.entity";
-import {AdministratorService} from "../../../profiles/services/administrador/administrator.service";
 
 @Component({
   selector: 'app-sidenav',
   templateUrl: './sidenav.component.html',
-  styleUrl: './sidenav.component.css'
+  styleUrl: './sidenav.component.css',
 })
 export class SidenavComponent implements OnInit{
+
   administrator: Administrator = {} as Administrator;
   constructor(private administratorService: AdministratorService) { }
 

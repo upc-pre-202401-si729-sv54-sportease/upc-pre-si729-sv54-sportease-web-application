@@ -10,5 +10,5 @@ export class AppComponent {
   pages = [
     { path: '/home-administrators', title: 'Home Administrators' },
     { path: '/home-students', title: 'Home Students' }
-  ]
+    ]
 }
