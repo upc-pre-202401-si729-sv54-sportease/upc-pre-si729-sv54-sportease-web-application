@@ -36,8 +36,21 @@
 .container-section{
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 1rem;
+  justify-content: flex-start;
+  margin: 10px 0;
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 150px;
+}
+
+.container-section:hover {
+  background-color: #9c9c9c ;
+}
+
+.container-section mat-icon {
+  margin-right: 10px;
 }
 
 .user-data{
@@ -49,5 +62,5 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  margin-right: 1.3rem;
+  margin-left: 0.5rem;
 }
