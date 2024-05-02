@@ -16,6 +16,8 @@ import {HttpClientModule} from "@angular/common/http";
 import {MatCardModule} from "@angular/material/card";
 import {MatCard, MatCardContent, MatCardHeader, MatCardTitle, MatCardSubtitle} from "@angular/material/card";
 import {MatButton} from "@angular/material/button";
+import {MatCalendar, MatDatepickerModule} from "@angular/material/datepicker";
+import {MAT_DATE_LOCALE, MatNativeDateModule} from "@angular/material/core";
 
 @NgModule({
   declarations: [
@@ -39,10 +41,14 @@ import {MatButton} from "@angular/material/button";
         MatCardTitle,
         MatCardSubtitle,
         MatCardModule,
-        MatButton
+        MatButton,
+        MatCalendar,
+        MatDatepickerModule,
+        MatNativeDateModule
     ],
   providers: [
-    provideAnimationsAsync()
+    provideAnimationsAsync(),
+    { provide: MAT_DATE_LOCALE, useValue: 'en-GB' }
   ],
   bootstrap: [AppComponent]
 })

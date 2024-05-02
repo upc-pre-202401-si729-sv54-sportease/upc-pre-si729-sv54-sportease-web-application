@@ -1,0 +1,38 @@
+.student-card{
+  margin: 2rem;
+}
+
+.container{
+  display: flex;
+  margin: 2rem;
+  gap: 2rem;
+}
+
+.data-card{
+  display: flex;
+  align-items: flex-start;
+  width: 300px;
+  height: 220px;
+  border-radius: 6px;
+  border-width: 1px;
+  border-style: solid;
+  box-shadow: 0 4px 10px #00000008, 0 0 2px #0000000f, 0 2px 6px #0000001f;
+  padding: 1rem;
+  background-color: #ffffff;
+  border-color: #FAFAFA;
+  box-sizing: border-box;
+
+}
+
+.demo-inline-calendar-card {
+  width: 300px;
+  border-radius: 12px;
+  /*background-color: #fdfbff;*/
+  border-width: 0;
+  border-style: solid;
+  border-color: #fdfbff;
+  box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, .2), 0px 1px 1px 0px rgba(0, 0, 0, .14), 0px 1px 3px 0px rgba(0, 0, 0, .12);;
+}
+
+
+

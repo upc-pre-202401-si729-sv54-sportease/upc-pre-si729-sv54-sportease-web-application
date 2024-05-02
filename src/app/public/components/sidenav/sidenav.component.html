@@ -1,17 +1,17 @@
-<mat-sidenav-container class="container" style="height: 100vh;">
-  <mat-sidenav #sidenav mode="side" opened class="sidenav" fixedInViewport="true">
-    <div *ngIf="isAdminUrl()">
+<div *ngIf="isAdminUrl()">
+  <mat-sidenav-container class="container" style="height: 100vh;">
+    <mat-sidenav #sidenav mode="side" opened class="sidenav" fixedInViewport="true">
       <div class="container-sidenav">
-        <div class="user-info" (click)="goToProfile()">
+        <div class="user-info">
           <img class="user-image" src="https://i.natgeofe.com/n/4f5aaece-3300-41a4-b2a8-ed2708a0a27c/domestic-dog_thumb_square.jpg?wp=1&w=272&h=272" alt="User Icon">
           <div class="user-data" *ngIf="administrator">
             <h3>{{administrator.name}}</h3>
             <h3>{{administrator.lastName}}</h3>
-            <h4>{{administrator.type}}</h4>
+            <h4>Administrator</h4>
           </div>
         </div>
         <div class="container-sections">
-          <div class="container-section" (click)="goToHome()">
+          <div class="container-section" (click)="goToHomeAdmin()">
             <mat-icon>home</mat-icon><p>Home</p>
           </div>
           <div class="container-section" (click)="goToPayments()">
@@ -30,19 +30,23 @@
           </div>
         </div>
       </div>
-    </div>
-    <div *ngIf="isStudentUrl()">
+    </mat-sidenav>
+  </mat-sidenav-container>
+</div>
+<div *ngIf="isStudentUrl()">
+  <mat-sidenav-container class="container" style="height: 100vh;">
+    <mat-sidenav #sidenav mode="side" opened class="sidenav" fixedInViewport="true">
       <div class="container-sidenav">
-        <div class="user-info" (click)="goToProfile()">
+        <div class="user-info">
           <img class="user-image" src="https://i.natgeofe.com/n/4f5aaece-3300-41a4-b2a8-ed2708a0a27c/domestic-dog_thumb_square.jpg?wp=1&w=272&h=272" alt="User Icon">
           <div class="user-data" *ngIf="student">
             <h3>{{student.name}}</h3>
             <h3>{{student.lastName}}</h3>
-            <h4>{{student.type}}</h4>
+            <h4>Student</h4>
           </div>
         </div>
         <div class="container-sections">
-          <div class="container-section" (click)="goToHome()">
+          <div class="container-section" (click)="goToHomeStudent()">
             <mat-icon>home</mat-icon><p>Home</p>
           </div>
           <div class="container-section" (click)="goToPayments()">
@@ -61,6 +65,8 @@
           </div>
         </div>
       </div>
-    </div>
-  </mat-sidenav>
-</mat-sidenav-container>
+
+    </mat-sidenav>
+  </mat-sidenav-container>
+</div>
+

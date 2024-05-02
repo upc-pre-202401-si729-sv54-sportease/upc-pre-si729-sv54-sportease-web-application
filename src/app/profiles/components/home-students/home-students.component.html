@@ -1,1 +1,49 @@
-<p>home-students works!</p>
+<div class="container-page">
+  <div class="student-card">
+    <h1>Welcome, {{ student.name }} {{ student.lastName }}!</h1>
+  </div>
+  <div class="container">
+    <mat-card class="data-card" *ngIf="student.paymentDates.length > 0">
+      <mat-card-header>
+        <mat-card-title>Fechas de pago</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div *ngFor="let date of student.paymentDates">
+          <p class="card-content">
+            Publicación: {{ date.publication }} - Vencimiento: {{ date.expiration }}
+          </p>
+        </div>
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card class="data-card" *ngIf="hasPendingPayments">
+      <mat-card-header>
+        <mat-card-title>Pagos pendientes</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p class="card-content">
+          Tienes pagos pendientes.
+        </p>
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card class="data-card" *ngIf="nextPayment">
+      <mat-card-header>
+        <mat-card-title>Próximo pago</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p class="card-content">
+          Tu próximo pago es el {{ nextPayment.publication }}.
+        </p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
+
+<div class="container">
+  <div class="container-calendar">
+    <mat-card class="demo-inline-calendar-card">
+      <mat-calendar [(selected)]="selected"></mat-calendar>
+    </mat-card>
+  </div>
+</div>

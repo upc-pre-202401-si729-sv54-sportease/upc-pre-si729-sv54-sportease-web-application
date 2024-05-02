@@ -36,8 +36,12 @@ export class SidenavComponent implements OnInit{
     console.log('Go to profile');
   }
 
-  goToHome(){
+  goToHomeAdmin(){
     this.router.navigate(['/home-administrators']);
+  }
+
+  goToHomeStudent(){
+    this.router.navigate(['/home-students']);
   }
 
   goToAttendance(){
