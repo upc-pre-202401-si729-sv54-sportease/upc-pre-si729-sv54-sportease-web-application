@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {AdministratorService} from "../../../profiles/services/administrator/administrator.service";
 import {Administrator} from "../../../profiles/model/administrator/administrator.entity";
-
+import {Router} from "@angular/router";
 @Component({
   selector: 'app-sidenav',
   templateUrl: './sidenav.component.html',
@@ -10,10 +10,10 @@ import {Administrator} from "../../../profiles/model/administrator/administrator
 export class SidenavComponent implements OnInit{
 
   administrator: Administrator = {} as Administrator;
-  constructor(private administratorService: AdministratorService) { }
+  constructor(private administratorService: AdministratorService, private router: Router) { }
 
   ngOnInit(): void {
-    this.administratorService.getAdministratorById(1).subscribe(admin => {
+    this.administratorService.getAdministratorById(2).subscribe(admin => {
       this.administrator = admin;
     });
   }
@@ -25,11 +25,11 @@ export class SidenavComponent implements OnInit{
   }
 
   goToHome(){
-    console.log('Go to home');
+    this.router.navigate(['/home-administrators']);
   }
 
   goToAttendance(){
-    console.log('Go to attendance');
+    this.router.navigate(['/home-students']);
   }
 
   goToPayments(){
