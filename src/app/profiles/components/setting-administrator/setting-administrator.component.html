@@ -1,0 +1,45 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Settings</mat-card-title>
+  </mat-card-header>
+  <br>
+  <mat-card-content class="content-container">
+    <div class="image-container">
+      <img class="user-image" src="https://i.natgeofe.com/n/4f5aaece-3300-41a4-b2a8-ed2708a0a27c/domestic-dog_thumb_square.jpg?wp=1&w=272&h=272" alt="User Icon">
+      <button mat-raised-button color="primary">Subir imagen</button>
+    </div>
+    <div class="data-container">
+      <h2>Datos Actuales</h2>
+      <p>Nombre:<!--{{administrator.name}}--> </p>
+      <p>Apellido: <!--{{administrator.lastName}}--> </p>
+      <p>Correo: <!--{{administrator.email}}--></p>
+    </div>
+
+  </mat-card-content>
+  <br>
+  <mat-card-header>
+    <mat-card-title>User Details</mat-card-title>
+  </mat-card-header>
+  <mat-card-content class="content-container">
+    <div class="data-container">
+      <h2>Ingrese los detalles del usuario</h2>
+      <h3>First Name</h3>
+      <mat-form-field appearance="fill">
+        <input matInput name="name" required placeholder="First Name">
+      </mat-form-field>
+      <h3>Last Name</h3>
+      <mat-form-field appearance="fill">
+        <input matInput name="lastName" required placeholder="Last Name">
+      </mat-form-field>
+      <h3>Email</h3>
+      <mat-form-field appearance="fill">
+        <input matInput name="email" required placeholder="Email">
+      </mat-form-field>
+      <h3>Password</h3>
+      <mat-form-field appearance="fill">
+        <input matInput type="password" required placeholder="Password">
+      </mat-form-field>
+      <button mat-raised-button color="primary">Guardar</button>
+    </div>
+  </mat-card-content>
+</mat-card>

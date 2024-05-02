@@ -1,0 +1,46 @@
+mat-card {
+  margin: 20px;
+  padding: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+mat-card:hover {
+  box-shadow: 0 12px 20px 0 rgba(0,0,0,0.2);
+}
+
+mat-card-header {
+  font-size:24px;
+  background-color: darkgrey;
+  color: white;
+  padding: 10px;
+}
+
+.user-image{
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+
+.content-container{
+  display: flex;
+}
+
+.image-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+button:hover {
+  background-color: #b83a4a;
+}
+
+.data-container {
+  margin-left: 20px;
+}
+
+mat-form-field {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
