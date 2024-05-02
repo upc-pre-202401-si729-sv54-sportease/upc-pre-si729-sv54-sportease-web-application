@@ -1,31 +1,64 @@
 <mat-sidenav-container class="container" style="height: 100vh;">
   <mat-sidenav #sidenav mode="side" opened class="sidenav" fixedInViewport="true">
-    <div class="container-sidenav">
-      <div class="user-info" (click)="goToProfile()">
-        <img class="user-image" src="https://i.natgeofe.com/n/4f5aaece-3300-41a4-b2a8-ed2708a0a27c/domestic-dog_thumb_square.jpg?wp=1&w=272&h=272" alt="User Icon">
-        <div class="user-data" *ngIf="administrator">
-          <h3>{{administrator.name}}</h3>
-          <h3>{{administrator.lastName}}</h3>
-          <h4>{{type}}</h4>
+    <div *ngIf="isAdminUrl()">
+      <div class="container-sidenav">
+        <div class="user-info" (click)="goToProfile()">
+          <img class="user-image" src="https://i.natgeofe.com/n/4f5aaece-3300-41a4-b2a8-ed2708a0a27c/domestic-dog_thumb_square.jpg?wp=1&w=272&h=272" alt="User Icon">
+          <div class="user-data" *ngIf="administrator">
+            <h3>{{administrator.name}}</h3>
+            <h3>{{administrator.lastName}}</h3>
+            <h4>{{administrator.type}}</h4>
+          </div>
+        </div>
+        <div class="container-sections">
+          <div class="container-section" (click)="goToHome()">
+            <mat-icon>home</mat-icon><p>Home</p>
+          </div>
+          <div class="container-section" (click)="goToPayments()">
+            <mat-icon>attach_money</mat-icon><p>Payments</p>
+          </div>
+          <div class="container-section" (click)="goToAttendance()">
+            <mat-icon>date_range</mat-icon><p>Attendance</p>
+          </div>
+          <div class="container-section" (click)="goToAttendance()">
+            <mat-icon>person</mat-icon><p>Students</p>
+          </div>
+        </div>
+        <div class="container-settings">
+          <div class="container-section" (click)="goToProfile()">
+            <mat-icon>settings</mat-icon><p>Settings</p>
+          </div>
         </div>
       </div>
-      <div class="container-sections">
-        <div class="container-section" (click)="goToHome()">
-          <mat-icon>home</mat-icon><p>Home</p>
+    </div>
+    <div *ngIf="isStudentUrl()">
+      <div class="container-sidenav">
+        <div class="user-info" (click)="goToProfile()">
+          <img class="user-image" src="https://i.natgeofe.com/n/4f5aaece-3300-41a4-b2a8-ed2708a0a27c/domestic-dog_thumb_square.jpg?wp=1&w=272&h=272" alt="User Icon">
+          <div class="user-data" *ngIf="student">
+            <h3>{{student.name}}</h3>
+            <h3>{{student.lastName}}</h3>
+            <h4>{{student.type}}</h4>
+          </div>
         </div>
-        <div class="container-section" (click)="goToPayments()">
-          <mat-icon>attach_money</mat-icon><p>Payments</p>
+        <div class="container-sections">
+          <div class="container-section" (click)="goToHome()">
+            <mat-icon>home</mat-icon><p>Home</p>
+          </div>
+          <div class="container-section" (click)="goToPayments()">
+            <mat-icon>attach_money</mat-icon><p>Payments</p>
+          </div>
+          <div class="container-section" (click)="goToAttendance()">
+            <mat-icon>date_range</mat-icon><p>Attendance</p>
+          </div>
+          <div class="container-section" (click)="goToAttendance()">
+            <mat-icon>person</mat-icon><p>Students</p>
+          </div>
         </div>
-        <div class="container-section" (click)="goToAttendance()">
-          <mat-icon>date_range</mat-icon><p>Attendance</p>
-        </div>
-        <div class="container-section" (click)="goToAttendance()">
-          <mat-icon>person</mat-icon><p>Students</p>
-        </div>
-      </div>
-      <div class="container-settings">
-        <div class="container-section" (click)="goToProfile()">
-          <mat-icon>settings</mat-icon><p>Settings</p>
+        <div class="container-settings">
+          <div class="container-section" (click)="goToProfile()">
+            <mat-icon>settings</mat-icon><p>Settings</p>
+          </div>
         </div>
       </div>
     </div>

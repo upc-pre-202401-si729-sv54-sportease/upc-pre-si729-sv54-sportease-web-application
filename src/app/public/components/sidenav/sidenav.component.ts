@@ -2,6 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {AdministratorService} from "../../../profiles/services/administrator/administrator.service";
 import {Administrator} from "../../../profiles/model/administrator/administrator.entity";
 import {Router} from "@angular/router";
+import {Student} from "../../../profiles/model/student/student.entity";
+import {StudentService} from "../../../profiles/services/student/student.service";
 @Component({
   selector: 'app-sidenav',
   templateUrl: './sidenav.component.html',
@@ -9,15 +11,26 @@ import {Router} from "@angular/router";
 })
 export class SidenavComponent implements OnInit{
 
+  isAdminUrl(){
+    return this.router.url === '/home-administrators';
+  }
+
+  isStudentUrl(){
+    return this.router.url === '/home-students';
+  }
+
   administrator: Administrator = {} as Administrator;
-  constructor(private administratorService: AdministratorService, private router: Router) { }
+  student: Student = {} as Student;
+  constructor(private administratorService: AdministratorService, private router: Router, private StudentService: StudentService) { }
   ngOnInit(): void {
     this.administratorService.getAdministratorData(1).subscribe(admin => {
       this.administrator = admin;
     });
-  }
 
-  type = 'Administrator';
+    this.StudentService.getStudentData(1).subscribe(student => {
+      this.student = student;
+    });
+  }
 
   goToProfile() {
     console.log('Go to profile');
