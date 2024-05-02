@@ -8,25 +8,32 @@ import {MatCard, MatCardContent, MatCardHeader, MatCardTitle} from "@angular/mat
 import {MatFormField, MatLabel} from "@angular/material/form-field";
 import {MatButton} from "@angular/material/button";
 import {MatInput} from "@angular/material/input";
+import {MatToolbar} from "@angular/material/toolbar";
+import {HttpClientModule} from "@angular/common/http";
+import {provideAnimationsAsync} from "@angular/platform-browser/animations/async";
 
 @NgModule({
   declarations: [
     AppComponent,
     SettingAdministratorComponent
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        MatCard,
-        MatCardHeader,
-        MatCardTitle,
-        MatCardContent,
-        MatFormField,
-        MatLabel,
-        MatButton,
-        MatInput
-    ],
-  providers: [],
+  imports: [
+    BrowserModule,
+    HttpClientModule,
+    AppRoutingModule,
+    MatCard,
+    MatCardHeader,
+    MatCardTitle,
+    MatCardContent,
+    MatFormField,
+    MatLabel,
+    MatButton,
+    MatInput,
+    MatToolbar
+  ],
+  providers: [
+    provideAnimationsAsync()
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
