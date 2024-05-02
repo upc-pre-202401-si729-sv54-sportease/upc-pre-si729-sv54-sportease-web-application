@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="category-section">
+    <h2>Categories</h2>
+    <div class="card-container">
+      <mat-card *ngFor="let category of administrator.categories">
+        <mat-card-header>
+          <mat-card-title-group>
+            <mat-card-title>Category {{ category.yearCategory }}</mat-card-title>
+            <button mat-icon-button (click)="viewStudentsToCategory(category.yearCategory)">
+              <mat-icon class="white-icon">add</mat-icon>
+            </button>
+          </mat-card-title-group>
+        </mat-card-header>
+        <mat-card-content>
+          <p>Professor: {{ category.nameProfessor }}</p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+
+  <div class="button-section">
+    <button mat-button color="primary" (click)="openAddCategoryDialog()">Add Category</button>
+    <!--<button mat-button color="warn">Delete Category</button>-->
+  </div>
+</div>

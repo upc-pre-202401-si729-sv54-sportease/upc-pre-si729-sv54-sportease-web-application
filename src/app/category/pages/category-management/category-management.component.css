@@ -1,0 +1,49 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 25px;
+  padding-left: 30px;
+}
+
+h2 {
+  color: #333;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+p {
+  color: #666;
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.category-section {
+  width: 300px;
+  height: 200px;
+}
+.card-container mat-card {
+  margin-bottom: 20px;
+  position: relative;
+}
+.card-container button {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.button-section {
+  width: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-left: 1000px;
+}
+.button-section button {
+  margin-bottom: 10px;
+  border: 0.5px solid black;
+  width: 100%;
+}
+
+.white-icon {
+  color: white;
+}
