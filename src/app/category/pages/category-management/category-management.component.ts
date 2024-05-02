@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {AdministratorService} from "../../services/administrator/administrator.service";
-import {Administrator} from "../../model/administrator/administrator.entity";
+import {AdministratorService} from "../../../public/services/administrator/administrator.service";
+import {Administrator} from "../../../public/model/administrator/administrator.entity";
 import {Router} from "@angular/router";
 import {MatDialog} from "@angular/material/dialog";
 import {AddCategoryDialogComponent} from "../../components/add-category-dialog/add-category-dialog.component";
@@ -19,7 +19,7 @@ export class CategoryManagementComponent implements OnInit{
   }
 
   private getAllAdministrator() {
-    this.administratorService.getAdministratorById(1).subscribe( admin => {
+    this.administratorService.getAdministratorData(1).subscribe((admin: Administrator) => {
       this.administrator = admin;
       console.log(this.administrator);
     });

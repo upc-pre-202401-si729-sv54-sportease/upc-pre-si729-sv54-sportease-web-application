@@ -1,9 +1,9 @@
 import {Component, OnInit} from '@angular/core';
-import {AdministratorService} from "../../../profiles/services/administrator/administrator.service";
-import {Administrator} from "../../../profiles/model/administrator/administrator.entity";
+import {AdministratorService} from "../../services/administrator/administrator.service";
+import {Administrator} from "../../model/administrator/administrator.entity";
 import {Router} from "@angular/router";
-import {Student} from "../../../profiles/model/student/student.entity";
-import {StudentService} from "../../../profiles/services/student/student.service";
+import {Student} from "../../model/student/student.entity";
+import {StudentService} from "../../services/student/student.service";
 @Component({
   selector: 'app-sidenav',
   templateUrl: './sidenav.component.html',
@@ -12,11 +12,15 @@ import {StudentService} from "../../../profiles/services/student/student.service
 export class SidenavComponent implements OnInit{
 
   isAdminUrl(){
-    return this.router.url === '/home-administrators';
+    return this.router.url === '/home-administrators' || this.router.url === '/category-management' || this.router.url === '/students-management';
   }
 
   isStudentUrl(){
     return this.router.url === '/home-students';
+  }
+
+  isCategoryManagementUrl(){
+    return this.router.url === '/category-management';
   }
 
   administrator: Administrator = {} as Administrator;

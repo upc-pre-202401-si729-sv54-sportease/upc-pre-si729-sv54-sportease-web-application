@@ -62,8 +62,8 @@ export class BaseService<T> {
       .pipe(retry(2), catchError(this.handleError));
   }
 
-  getStudentsByCategory(yearCategory: number) {
-    return this.http.get<T[]>(`${this.resourcePath()}?category=${yearCategory}`, this.httpOptions)
+  getStudentsByCategory(yearCategory: number, index: number) {
+    return this.http.get<T[]>(`${this.resourcePath(index)}?category=${yearCategory}`, this.httpOptions)
       .pipe(retry(2), catchError(this.handleError));
   }
 }

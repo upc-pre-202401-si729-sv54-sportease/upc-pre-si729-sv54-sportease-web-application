@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { StudentService } from '../../services/student/student.service';
-import { Student } from '../../model/student/student.entity';
-import {Administrator} from "../../model/administrator/administrator.entity";
-import {AdministratorService} from "../../services/administrator/administrator.service";
+import { StudentService } from '../../../public/services/student/student.service';
+import { Student } from '../../../public/model/student/student.entity';
+import {Administrator} from "../../../public/model/administrator/administrator.entity";
+import {AdministratorService} from "../../../public/services/administrator/administrator.service";
 
 @Component({
   selector: 'app-home-administrators',

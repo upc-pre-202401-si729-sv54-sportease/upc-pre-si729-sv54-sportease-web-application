@@ -1,5 +1,5 @@
 import {Component, Inject} from '@angular/core';
-import {StudentService} from "../../services/student/student.service";
+import {StudentService} from "../../../public/services/student/student.service";
 
 @Component({
   selector: 'app-home-students',

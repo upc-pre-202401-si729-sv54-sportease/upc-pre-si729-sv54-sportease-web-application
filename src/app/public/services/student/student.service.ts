@@ -25,4 +25,9 @@ export class StudentService {
     // Obtiene el próximo pago del estudiante
     return student.paymentDates.find((date: {publication: string}) => new Date(date.publication) > new Date());
   }
+
+  // En StudentService
+  getStudentsByCategory(yearCategory: number) {
+    return this.baseService.getStudentsByCategory(yearCategory, 0);
+  }
 }

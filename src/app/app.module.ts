@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
@@ -19,9 +18,9 @@ import {MatButton} from "@angular/material/button";
 import {MatCalendar, MatDatepickerModule} from "@angular/material/datepicker";
 import {MAT_DATE_LOCALE, MatNativeDateModule} from "@angular/material/core";
 import { CategoryManagementComponent } from './category/pages/category-management/category-management.component';
-import {MatAnchor, MatButton, MatFabButton, MatIconButton} from "@angular/material/button";
+import {MatAnchor, MatFabButton, MatIconButton} from "@angular/material/button";
 import {MatListItem, MatNavList} from "@angular/material/list";
-import {AdministratorService} from "./category/services/administrator/administrator.service";
+import {AdministratorService} from "./public/services/administrator/administrator.service";
 import { StudentsManagementComponent } from './students-for-category/pages/students-management/students-management.component';
 import {MatDialogModule} from "@angular/material/dialog";
 import { AddCategoryDialogComponent } from './category/components/add-category-dialog/add-category-dialog.component';
@@ -69,7 +68,10 @@ import { DeleteStudentDialogComponent } from './students-for-category/components
     MatIconButton,
     MatDialogModule,
     ReactiveFormsModule,
-    MatInput
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatInput,
+    MatCalendar
   ],
   providers: [
     provideAnimationsAsync(),

@@ -9,7 +9,9 @@ const routes: Routes = [
   { path: 'home-administrators', component: HomeAdministratorsComponent },
   { path: 'home-students', component: HomeStudentsComponent },
   { path: 'category-management', component: CategoryManagementComponent},
-  { path: 'students-management/:yearCategory', component: StudentsManagementComponent}
+  { path: 'students-management/:yearCategory', component: StudentsManagementComponent},
+  { path: '', redirectTo: '/home-administrators', pathMatch: 'full' }
+
 ];
 
 @NgModule({

@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {Student} from "../../model/student/student.entity";
-import {StudentService} from "../../services/student/student.service";
+import {Student} from "../../../public/model/student/student.entity";
+import {StudentService} from "../../../public/services/student/student.service";
 import {ActivatedRoute} from "@angular/router";
 import {MatDialog} from "@angular/material/dialog";
 import {AddStudentDialogComponent} from "../../components/add-student-dialog/add-student-dialog.component";
@@ -28,11 +28,11 @@ export class StudentsManagementComponent implements OnInit{
 
   getStudentsByCategory(yearCategory: number) {
     this.studentService.getStudentsByCategory(yearCategory).subscribe(
-      students => {
+      (students: Student[]) => {
         this.students = students;
         console.log(this.students);
       },
-      error => {
+      (error: any) => {
         console.error('Error fetching students:', error);
       }
     );
@@ -40,7 +40,6 @@ export class StudentsManagementComponent implements OnInit{
 
   openAddStudentDialog(): void {
     const dialogRef = this.dialog.open(AddStudentDialogComponent);
-
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
         this.students.push(result);
