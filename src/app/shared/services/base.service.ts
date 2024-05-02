@@ -57,7 +57,7 @@ export class BaseService<T> {
   }
 
   getStudentsByCategory(yearCategory: number) {
-    return this.http.get<T[]>(`https://my-json-server.typicode.com/upc-pre-202401-si729-sv54-sportease/sportEase-student/student?category=${yearCategory}`, this.httpOptions)
+    return this.http.get<T[]>(`${this.resourcePath()}?category=${yearCategory}`, this.httpOptions)
       .pipe(retry(2), catchError(this.handleError));
   }
 }

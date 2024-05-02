@@ -11,6 +11,6 @@ export class StudentService extends BaseService<Student>{
 
   constructor(http: HttpClient) {
     super(http);
-    this.resourceEndpoint = '/student';
+    this.resourceEndpoint = '/sportEase-student/student';
   }
 }

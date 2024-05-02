@@ -10,6 +10,6 @@ export class AdministratorService extends BaseService<Administrator> {
 
   constructor(http: HttpClient) {
     super(http);
-    this.resourceEndpoint = '/administrator';
+    this.resourceEndpoint = '/sportEase-managment/administrator';
   }
 }
