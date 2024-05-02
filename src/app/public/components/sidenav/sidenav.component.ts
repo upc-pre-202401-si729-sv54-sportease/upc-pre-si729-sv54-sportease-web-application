@@ -12,15 +12,11 @@ import {StudentService} from "../../services/student/student.service";
 export class SidenavComponent implements OnInit{
 
   isAdminUrl(){
-    return this.router.url === '/home-administrators' || this.router.url === '/category-management' || this.router.url === '/students-management';
+    return this.router.url === '/home-administrators' || this.router.url === '/category-management' || this.router.url.includes('/students-management');
   }
 
   isStudentUrl(){
     return this.router.url === '/home-students';
-  }
-
-  isCategoryManagementUrl(){
-    return this.router.url === '/category-management';
   }
 
   administrator: Administrator = {} as Administrator;
