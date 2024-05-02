@@ -20,6 +20,12 @@ import {MatAnchor, MatButton, MatFabButton, MatIconButton} from "@angular/materi
 import {MatListItem, MatNavList} from "@angular/material/list";
 import {AdministratorService} from "./category/services/administrator/administrator.service";
 import { StudentsManagementComponent } from './students-for-category/pages/students-management/students-management.component';
+import {MatDialogModule} from "@angular/material/dialog";
+import { AddCategoryDialogComponent } from './category/components/add-category-dialog/add-category-dialog.component';
+import {ReactiveFormsModule} from "@angular/forms";
+import {MatInput} from "@angular/material/input";
+import { AddStudentDialogComponent } from './students-for-category/components/add-student-dialog/add-student-dialog.component';
+import { DeleteStudentDialogComponent } from './students-for-category/components/delete-student-dialog/delete-student-dialog.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +35,9 @@ import { StudentsManagementComponent } from './students-for-category/pages/stude
     SidenavComponent,
     CategoryManagementComponent,
     StudentsManagementComponent,
+    AddCategoryDialogComponent,
+    AddStudentDialogComponent,
+    DeleteStudentDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -54,7 +63,10 @@ import { StudentsManagementComponent } from './students-for-category/pages/stude
     MatCardModule,
     MatButton,
     MatFabButton,
-    MatIconButton
+    MatIconButton,
+    MatDialogModule,
+    ReactiveFormsModule,
+    MatInput
   ],
   providers: [
     provideAnimationsAsync(),

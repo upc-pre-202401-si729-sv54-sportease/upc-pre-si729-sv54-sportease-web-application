@@ -2,7 +2,7 @@
   <div class="category-section">
     <h2>STUDENTS</h2>
     <div class="card-container">
-      <mat-card *ngFor="let student of students">
+      <mat-card *ngFor="let student of students; let i = index">
         <mat-card-header>
           <mat-card-title-group>
             <mat-card-title>{{ student.name }} {{ student.lastName }}</mat-card-title>
@@ -11,12 +11,14 @@
         <mat-card-content>
           <p>Email: {{ student.email }}</p>
         </mat-card-content>
+        <mat-card-actions>
+          <button mat-button color="warn" (click)="openDeleteStudentDialog(i)">Delete</button>
+        </mat-card-actions>
       </mat-card>
     </div>
   </div>
 
   <div class="button-section">
-    <button mat-button color="primary">Add Student</button>
-    <button mat-button color="warn">Delete Student</button>
+    <button mat-button color="primary" (click)="openAddStudentDialog()">Add Student</button>
   </div>
 </div>
