@@ -1,16 +1,95 @@
-<div class="student-card" *ngFor="let student of students">
-  <mat-card>
-    <mat-card-header>
-      <mat-card-title>{{ student.name }}</mat-card-title>
-      <mat-card-subtitle>{{ student.id }}</mat-card-subtitle>
-    </mat-card-header>
-    <mat-card-content>
-      <p>
-        asd
-      </p>
-    </mat-card-content>
-    <mat-card-actions>
-      <button mat-button>VER DETALLES</button>
-    </mat-card-actions>
-  </mat-card>
+<div class="container-page">
+  <div class="admin-card">
+    <h1>Welcome, {{ administrator.name }} {{ administrator.lastName }}!</h1>
+  </div>
+
+  <div class="container">
+    <div>
+      <mat-card class="data-card">
+        <mat-card-header>
+          <mat-card-title>Total Students</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <p class="card-content">
+            {{ studentsCount }}
+          </p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-raised-button color="primary" routerLink="/home-students">View Details</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+
+    <div>
+      <mat-card class="data-card">
+        <mat-card-header>
+          <mat-card-title>Students by category</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <div *ngFor="let category of studentsByCategory | keyvalue" class="category-info">
+            <p>{{ category.key }} Students: {{ category.value }}</p>
+          </div>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-raised-button color="primary" routerLink="/home-students">View Details</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+
+    <div>
+      <mat-card class="data-card">
+        <mat-card-header>
+          <mat-card-title>Students with pending payments</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <p class="card-content">
+            {{ studentsWithPendingPaymentsCount }}
+          </p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-raised-button color="primary" routerLink="/home-students">View Details</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+
+    <div>
+      <mat-card class="data-card">
+        <mat-card-header>
+          <mat-card-title>Next payments</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <p class="card-content">
+            {{ upcomingPayments }}
+          </p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-raised-button color="primary" routerLink="/home-students">View Details</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+
+  <div class="card-list-students">
+    <div class="student-card">
+      <mat-card class="data-card-list">
+        <mat-card-header>
+          <mat-card-title>Students with pending payments</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <div *ngFor="let student of studentsWithPendingPayments" class="student-info">
+            <img src="https://img.freepik.com/vector-premium/icono-perfil-usuario-estilo-plano-ilustracion-vector-avatar-miembro-sobre-fondo-aislado-concepto-negocio-signo-permiso-humano_157943-15752.jpg?w=1480" alt="Student Image" style="width: 50px; height: 50px;">
+            <p>{{ student.name }} {{ student.lastName }}</p>
+            <p>Your payment date was: {{student.paymentExpiration}}</p>
+            <p>Category: {{ student.category }}</p>
+          </div>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-raised-button color="primary" routerLink="/home-students">View Details</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
 </div>
+
+
+

@@ -12,8 +12,6 @@ export class StudentService {
     return this.baseService.getAdministratorById(id, 0);
   }
 
-  // En StudentService
-  // En StudentService
   getAllStudents(){
     return this.baseService.getAll(0);
   }

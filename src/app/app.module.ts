@@ -15,6 +15,7 @@ import {MatIcon} from "@angular/material/icon";
 import {HttpClientModule} from "@angular/common/http";
 import {MatCardModule} from "@angular/material/card";
 import {MatCard, MatCardContent, MatCardHeader, MatCardTitle, MatCardSubtitle} from "@angular/material/card";
+import {MatButton} from "@angular/material/button";
 
 @NgModule({
   declarations: [
@@ -23,22 +24,23 @@ import {MatCard, MatCardContent, MatCardHeader, MatCardTitle, MatCardSubtitle} f
     HomeStudentsComponent,
     SidenavComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    MatToolbarModule,
-    MatSidenavModule,
-    MatCheckboxModule,
-    MatFormFieldModule,
-    MatIcon,
-    HttpClientModule,
-    MatCard,
-    MatCardHeader,
-    MatCardContent,
-    MatCardTitle,
-    MatCardSubtitle,
-    MatCardModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        MatToolbarModule,
+        MatSidenavModule,
+        MatCheckboxModule,
+        MatFormFieldModule,
+        MatIcon,
+        HttpClientModule,
+        MatCard,
+        MatCardHeader,
+        MatCardContent,
+        MatCardTitle,
+        MatCardSubtitle,
+        MatCardModule,
+        MatButton
+    ],
   providers: [
     provideAnimationsAsync()
   ],
