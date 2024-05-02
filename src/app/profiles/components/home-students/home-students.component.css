@@ -1,5 +1,10 @@
 .student-card{
   margin: 2rem;
+  color: #9E9E9E;
+}
+
+mat-card-title{
+  color: #9E9E9E;
 }
 
 .container{
@@ -34,5 +39,34 @@
   box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, .2), 0px 1px 1px 0px rgba(0, 0, 0, .14), 0px 1px 3px 0px rgba(0, 0, 0, .12);;
 }
 
+.payment-date {
+  background: orange;
+  border-radius: 100%;
+}
+
+.container-card{
+  margin-left: 2rem;
+  display: flex;
+  flex-direction: column;
+  width: 630px;
+  border-radius: 6px;
+  border-width: 1px;
+  border-style: solid;
+  box-shadow: 0 4px 10px #00000008, 0 0 2px #0000000f, 0 2px 6px #0000001f;
+  padding: 1rem;
+  background-color: #ffffff;
+  border-color: #FAFAFA;
+  box-sizing: border-box;
+}
+
+.subtitle-card{
+  color: #9E9E9E;
+}
+
+.calendar-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
 
 

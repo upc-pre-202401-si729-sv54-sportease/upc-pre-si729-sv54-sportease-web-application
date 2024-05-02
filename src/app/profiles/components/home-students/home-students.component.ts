@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, Inject} from '@angular/core';
 import {StudentService} from "../../services/student/student.service";
 
 @Component({
@@ -6,7 +6,7 @@ import {StudentService} from "../../services/student/student.service";
   templateUrl: './home-students.component.html',
   styleUrl: './home-students.component.css'
 })
-export class HomeStudentsComponent {
+export class HomeStudentsComponent{
   selected: Date | null = null;
   student: any;
   hasPendingPayments: boolean = false;
@@ -14,7 +14,6 @@ export class HomeStudentsComponent {
 
   constructor(private studentService: StudentService) {
   }
-
   ngOnInit() {
     this.studentService.getStudentData(1).subscribe(student => {
       this.student = student;
@@ -22,6 +21,6 @@ export class HomeStudentsComponent {
       this.nextPayment = this.studentService.getNextPayment(student);
     });
   }
-
 }
+
 

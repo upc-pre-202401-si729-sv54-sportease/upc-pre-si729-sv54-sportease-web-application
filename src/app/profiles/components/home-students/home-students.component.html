@@ -5,7 +5,7 @@
   <div class="container">
     <mat-card class="data-card" *ngIf="student.paymentDates.length > 0">
       <mat-card-header>
-        <mat-card-title>Fechas de pago</mat-card-title>
+        <mat-card-title>Payment Dates</mat-card-title>
       </mat-card-header>
       <mat-card-content>
         <div *ngFor="let date of student.paymentDates">
@@ -18,32 +18,51 @@
 
     <mat-card class="data-card" *ngIf="hasPendingPayments">
       <mat-card-header>
-        <mat-card-title>Pagos pendientes</mat-card-title>
+        <mat-card-title>Pending Payments</mat-card-title>
       </mat-card-header>
       <mat-card-content>
         <p class="card-content">
-          Tienes pagos pendientes.
+          You have pending payments.
         </p>
       </mat-card-content>
     </mat-card>
 
     <mat-card class="data-card" *ngIf="nextPayment">
       <mat-card-header>
-        <mat-card-title>Próximo pago</mat-card-title>
+        <mat-card-title>Next Payment</mat-card-title>
       </mat-card-header>
       <mat-card-content>
         <p class="card-content">
-          Tu próximo pago es el {{ nextPayment.publication }}.
+          Your next payment is {{ nextPayment.publication }}.
         </p>
       </mat-card-content>
     </mat-card>
+
+
+    <mat-card class="data-card">
+      <mat-card-header>
+        <mat-card-title>Next Classes</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div *ngFor="let class of student.classes">
+          <p class="card-content">
+            {{ class.name }} - {{ class.schedule }}
+          </p>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <div class="container-calendar">
+    <div class="container-card">
+      <h2 class="subtitle-card">Schedules</h2>
+      <div class="calendar-container">
+        <mat-card class="demo-inline-calendar-card">
+          <mat-calendar [(selected)]="selected" ></mat-calendar>
+        </mat-card>
+        <button mat-raised-button color="primary">Add event</button>
+      </div>
+    </div>
   </div>
 </div>
 
-<div class="container">
-  <div class="container-calendar">
-    <mat-card class="demo-inline-calendar-card">
-      <mat-calendar [(selected)]="selected"></mat-calendar>
-    </mat-card>
-  </div>
-</div>
