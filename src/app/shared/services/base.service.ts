@@ -1,20 +1,20 @@
 import { Injectable } from '@angular/core';
-import {environment} from "../../../environments/environment";
 import {HttpClient, HttpErrorResponse, HttpHeaders} from "@angular/common/http";
 import {catchError, retry, throwError} from "rxjs";
+import {environment} from "../../../environments/environment.development";
 
 @Injectable({
   providedIn: 'root'
 })
 export class BaseService<T> {
-  basePath: string = `${environment.serverBasePath}`
-  resourceEndpoint: string = '/resources';
+  basePath: string = `${environment.serverBasePath}`;
+  resourceEndpoints: string[] = ['/sportEase-student/student', '/sportEase-managment/administrator'];
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
     })
   }
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   handleError(error: HttpErrorResponse){
     if (error.error instanceof ErrorEvent) {
@@ -27,32 +27,27 @@ export class BaseService<T> {
     return throwError(() => new Error('Something bad happened; please try again later.'));
   }
 
-  private resourcePath(): string {
-    return `${this.basePath}${this.resourceEndpoint}`;
+  private resourcePath(index: number): string {
+    return `${this.basePath}${this.resourceEndpoints[index]}`;
   }
 
-  create(item: any){
-    return this.http.post<T>(this.resourcePath(), JSON.stringify(item), this.httpOptions)
+  create(item: any, index: number){
+    return this.http.post<T>(this.resourcePath(index), JSON.stringify(item), this.httpOptions)
       .pipe(retry(2), catchError(this.handleError));
   }
 
-  delete(id: any){
-    return this.http.delete<T>(`${this.resourcePath()}/${id}`, this.httpOptions)
+  delete(id: any, index: number){
+    return this.http.delete<T>(`${this.resourcePath(index)}/${id}`, this.httpOptions)
       .pipe(retry(2), catchError(this.handleError));
   }
 
-  update(id: any, item: any){
-    return this.http.put<T>(`${this.resourcePath()}/${id}`, JSON.stringify(item), this.httpOptions)
+  update(id: any, item: any, index: number){
+    return this.http.put<T>(`${this.resourcePath(index)}/${id}`, JSON.stringify(item), this.httpOptions)
       .pipe(retry(2), catchError(this.handleError));
   }
 
-  getAll(){
-    return this.http.get<T>(this.resourcePath(),this.httpOptions)
-      .pipe(retry(2), catchError(this.handleError));
-  }
-
-  getAdministratorById(id: any){
-    return this.http.get<T>(`${this.resourcePath()}/${id}`, this.httpOptions)
+  getAdministratorById(id: any, index: number){
+    return this.http.get<T>(`${this.resourcePath(index)}/${id}`, this.httpOptions)
       .pipe(retry(2), catchError(this.handleError));
   }
 }

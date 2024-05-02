@@ -11,9 +11,8 @@ export class SidenavComponent implements OnInit{
 
   administrator: Administrator = {} as Administrator;
   constructor(private administratorService: AdministratorService, private router: Router) { }
-
   ngOnInit(): void {
-    this.administratorService.getAdministratorById(2).subscribe(admin => {
+    this.administratorService.getAdministratorData(1).subscribe(admin => {
       this.administrator = admin;
     });
   }
