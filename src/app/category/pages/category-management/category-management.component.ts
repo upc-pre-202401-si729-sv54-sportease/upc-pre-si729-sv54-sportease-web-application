@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {AdministratorService} from "../../services/administrator/administrator.service";
 import {Administrator} from "../../model/administrator/administrator.entity";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-category-management',
@@ -9,7 +10,7 @@ import {Administrator} from "../../model/administrator/administrator.entity";
 })
 export class CategoryManagementComponent implements OnInit{
   administrator: Administrator = {} as Administrator;
-  constructor(private administratorService: AdministratorService) { }
+  constructor(private administratorService: AdministratorService, private router: Router) { }
 
   ngOnInit(): void {
     this.getAllAdministrator();
@@ -20,5 +21,9 @@ export class CategoryManagementComponent implements OnInit{
       this.administrator = admin;
       console.log(this.administrator);
     });
+  }
+
+  viewStudentsToCategory(yearCategory: number){
+    this.router.navigate(['students-management', yearCategory]);
   }
 }

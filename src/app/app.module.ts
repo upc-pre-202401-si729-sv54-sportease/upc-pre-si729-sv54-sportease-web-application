@@ -19,6 +19,7 @@ import { CategoryManagementComponent } from './category/pages/category-managemen
 import {MatAnchor, MatButton, MatFabButton, MatIconButton} from "@angular/material/button";
 import {MatListItem, MatNavList} from "@angular/material/list";
 import {AdministratorService} from "./category/services/administrator/administrator.service";
+import { StudentsManagementComponent } from './students-for-category/pages/students-management/students-management.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import {AdministratorService} from "./category/services/administrator/administra
     HomeStudentsComponent,
     SidenavComponent,
     CategoryManagementComponent,
+    StudentsManagementComponent,
   ],
   imports: [
     BrowserModule,
