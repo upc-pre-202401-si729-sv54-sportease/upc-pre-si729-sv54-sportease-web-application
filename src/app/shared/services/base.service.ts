@@ -50,4 +50,9 @@ export class BaseService<T> {
     return this.http.get<T>(`${this.resourcePath(index)}/${id}`, this.httpOptions)
       .pipe(retry(2), catchError(this.handleError));
   }
+
+  getAll(index: number){
+    return this.http.get<T[]>(this.resourcePath(index), this.httpOptions)
+      .pipe(retry(2), catchError(this.handleError));
+  }
 }
