@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import {StudentGroupComponent} from "./list-students-for-student/pages/student-group/student-group.component";
 
 const routes: Routes = [
-  { path: 'student-group', component: StudentGroupComponent }
+  { path: 'student-group/:yearCategory', component: StudentGroupComponent }
 ];
 
 @NgModule({

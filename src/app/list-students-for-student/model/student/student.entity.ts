@@ -3,5 +3,6 @@ export class Student {
   name: string = '';
   lastName: string = '';
   email: string = '';
+  category: number = 0;
   password: string = '';
 }

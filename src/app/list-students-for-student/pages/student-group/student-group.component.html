@@ -1,1 +1,18 @@
-<p>student-group works!</p>
+<p>HOLAAAA</p>
+<div class="container">
+  <div class="category-section">
+    <h2>STUDENTS</h2>
+    <div class="card-container">
+      <mat-card *ngFor="let student of students; let i = index">
+        <mat-card-header>
+          <mat-card-title-group>
+            <mat-card-title>{{ student.name }} {{ student.lastName }}</mat-card-title>
+          </mat-card-title-group>
+        </mat-card-header>
+        <mat-card-content>
+          <p>Email: {{ student.email }}</p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>
