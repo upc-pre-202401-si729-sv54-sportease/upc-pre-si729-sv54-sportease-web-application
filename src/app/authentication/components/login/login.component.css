@@ -1,0 +1,45 @@
+.container {
+  display: flex;
+  height: 100vh;
+  background-color: #f5f5f5;
+}
+
+mat-card-title, mat-card-footer{
+  margin: 1rem;
+}
+
+mat-card {
+  max-width: 300px;
+  padding: 2rem;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: auto;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+button {
+  margin-top: 10px;
+}
+
+span{
+  color: gray;
+}
+
+.mat-mdc-raised-button.mat-primary {
+  --mdc-protected-button-container-color: #0000ff;
+  --mdc-protected-button-label-text-color: white;
+  --mat-protected-button-state-layer-color: white;
+  --mat-protected-button-ripple-color: rgba(255, 255, 255, 0.1);
+}
