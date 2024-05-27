@@ -45,6 +45,8 @@ import {MatInput} from "@angular/material/input";
 import {MatToolbar} from "@angular/material/toolbar";
 import {HttpClientModule} from "@angular/common/http";
 import {provideAnimationsAsync} from "@angular/platform-browser/animations/async";
+import { StudentGroupComponent } from './list-students-for-student/pages/student-group/student-group.component';
+import {StudentService} from "./list-students-for-student/services/student.service";
 
 @NgModule({
   declarations: [
@@ -59,6 +61,7 @@ import {provideAnimationsAsync} from "@angular/platform-browser/animations/async
     AddCategoryDialogComponent,
     AddStudentDialogComponent,
     DeleteStudentDialogComponent,
+    StudentGroupComponent,
     SettingAdministratorComponent
   ],
   imports: [
@@ -97,6 +100,7 @@ import {provideAnimationsAsync} from "@angular/platform-browser/animations/async
   providers: [
     provideAnimationsAsync(),
     AdministratorService,
+    StudentService,
     { provide: MAT_DATE_LOCALE, useValue: 'en-GB' }
   ],
   bootstrap: [AppComponent]

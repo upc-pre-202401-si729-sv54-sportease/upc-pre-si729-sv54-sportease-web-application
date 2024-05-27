@@ -13,6 +13,7 @@ export class AppComponent {
     { path: '/category-management', title: 'Category Management' },
     { path: '/login', title: 'Login' },
     { path: '/settings', title: 'Settings' },
+    { path: '/student-group', title: 'Student Group' },
     { path: '/register', title: 'Register'}
   ]
 }
