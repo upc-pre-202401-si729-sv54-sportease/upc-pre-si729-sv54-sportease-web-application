@@ -33,13 +33,15 @@ button {
   margin-top: 10px;
 }
 
-span{
+span {
   color: gray;
+  transition: all 0.3s ease;
 }
 
-.mat-mdc-raised-button.mat-primary {
-  --mdc-protected-button-container-color: #0000ff;
-  --mdc-protected-button-label-text-color: white;
-  --mat-protected-button-state-layer-color: white;
-  --mat-protected-button-ripple-color: rgba(255, 255, 255, 0.1);
+span:hover {
+  color: black;
+  cursor: pointer;
+  border-bottom: 1px solid gray;
 }
+
+
