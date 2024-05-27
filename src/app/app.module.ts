@@ -38,6 +38,13 @@ import { MatInputModule } from "@angular/material/input";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import {ReactiveFormsModule} from "@angular/forms";
 import {MatOption, MatSelect} from "@angular/material/select";
+import { SettingAdministratorComponent } from './profiles/components/setting-administrator/setting-administrator.component';
+import {MatFormField, MatLabel} from "@angular/material/form-field";
+import {MatButton} from "@angular/material/button";
+import {MatInput} from "@angular/material/input";
+import {MatToolbar} from "@angular/material/toolbar";
+import {HttpClientModule} from "@angular/common/http";
+import {provideAnimationsAsync} from "@angular/platform-browser/animations/async";
 
 @NgModule({
   declarations: [
@@ -52,6 +59,7 @@ import {MatOption, MatSelect} from "@angular/material/select";
     AddCategoryDialogComponent,
     AddStudentDialogComponent,
     DeleteStudentDialogComponent,
+    SettingAdministratorComponent
   ],
   imports: [
     BrowserModule,
@@ -83,8 +91,8 @@ import {MatOption, MatSelect} from "@angular/material/select";
     MatDatepickerModule,
     MatNativeDateModule,
     MatInput,
-    MatCalendar
-    
+    MatCalendar,
+  
   ],
   providers: [
     provideAnimationsAsync(),

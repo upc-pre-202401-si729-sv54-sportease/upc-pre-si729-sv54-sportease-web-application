@@ -11,7 +11,8 @@ export class AppComponent {
     { path: '/home-administrators', title: 'Home Administrators' },
     { path: '/home-students', title: 'Home Students' },
     { path: '/category-management', title: 'Category Management' },
-    { path: '/login', title: 'Login'},
+    { path: '/login', title: 'Login' },
+    { path: '/settings', title: 'Settings' },
     { path: '/register', title: 'Register'}
   ]
 }

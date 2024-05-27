@@ -6,15 +6,16 @@ import {CategoryManagementComponent} from "./category/pages/category-management/
 import {StudentsManagementComponent} from "./students-for-category/pages/students-management/students-management.component";
 import {LoginComponent} from "./authentication/components/login/login.component";
 import {RegisterComponent} from "./authentication/components/register/register.component";
-
+import {SettingAdministratorComponent} from "./profiles/components/setting-administrator/setting-administrator.component";
 
 const routes: Routes = [
   { path: 'home-administrators', component: HomeAdministratorsComponent },
   { path: 'home-students', component: HomeStudentsComponent },
   { path: 'category-management', component: CategoryManagementComponent},
   { path: 'students-management/:yearCategory', component: StudentsManagementComponent},
-  {path: 'login', component: LoginComponent},
-  {path: 'register', component: RegisterComponent}
+  { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
+  { path: 'settings', component: SettingAdministratorComponent },
   { path: '', redirectTo: '/login', pathMatch: 'full' }
 
 ];
