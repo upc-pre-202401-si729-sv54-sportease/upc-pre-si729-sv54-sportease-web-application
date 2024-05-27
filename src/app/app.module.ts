@@ -28,10 +28,22 @@ import {ReactiveFormsModule} from "@angular/forms";
 import {MatInput} from "@angular/material/input";
 import { AddStudentDialogComponent } from './students-for-category/components/add-student-dialog/add-student-dialog.component';
 import { DeleteStudentDialogComponent } from './students-for-category/components/delete-student-dialog/delete-student-dialog.component';
+import { LoginComponent } from './authentication/components/login/login.component';
+import { RegisterComponent } from './authentication/components/register/register.component';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import {MatCard, MatCardContent, MatCardFooter, MatCardTitle} from "@angular/material/card";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import { MatButtonModule } from "@angular/material/button";
+import { MatInputModule } from "@angular/material/input";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import {ReactiveFormsModule} from "@angular/forms";
+import {MatOption, MatSelect} from "@angular/material/select";
 
 @NgModule({
   declarations: [
     AppComponent,
+    LoginComponent,
+    RegisterComponent,
     HomeAdministratorsComponent,
     HomeStudentsComponent,
     SidenavComponent,
@@ -72,6 +84,7 @@ import { DeleteStudentDialogComponent } from './students-for-category/components
     MatNativeDateModule,
     MatInput,
     MatCalendar
+    
   ],
   providers: [
     provideAnimationsAsync(),
