@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {Student} from "../../model/student/student.entity";
-import {StudentService} from "../../services/student.service";
 import {ActivatedRoute} from "@angular/router";
+import {Student} from "../../../public/model/student/student.entity";
+import {StudentService} from "../../../public/services/student/student.service";
 
 @Component({
   selector: 'app-student-group',

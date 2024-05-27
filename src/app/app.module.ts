@@ -16,7 +16,7 @@ import {MatCardModule, MatCardTitleGroup} from "@angular/material/card";
 import {MatCard, MatCardContent, MatCardHeader, MatCardTitle, MatCardSubtitle} from "@angular/material/card";
 import {MatButton} from "@angular/material/button";
 import {MatCalendar, MatDatepickerModule} from "@angular/material/datepicker";
-import {MAT_DATE_LOCALE, MatNativeDateModule} from "@angular/material/core";
+import {MAT_DATE_LOCALE, MatNativeDateModule, MatOption} from "@angular/material/core";
 import { CategoryManagementComponent } from './category/pages/category-management/category-management.component';
 import {MatAnchor, MatFabButton, MatIconButton} from "@angular/material/button";
 import {MatListItem, MatNavList} from "@angular/material/list";
@@ -30,23 +30,10 @@ import { AddStudentDialogComponent } from './students-for-category/components/ad
 import { DeleteStudentDialogComponent } from './students-for-category/components/delete-student-dialog/delete-student-dialog.component';
 import { LoginComponent } from './authentication/components/login/login.component';
 import { RegisterComponent } from './authentication/components/register/register.component';
-import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
-import {MatCard, MatCardContent, MatCardFooter, MatCardTitle} from "@angular/material/card";
-import {MatFormFieldModule} from "@angular/material/form-field";
-import { MatButtonModule } from "@angular/material/button";
-import { MatInputModule } from "@angular/material/input";
-import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-import {ReactiveFormsModule} from "@angular/forms";
-import {MatOption, MatSelect} from "@angular/material/select";
-import { SettingAdministratorComponent } from './profiles/components/setting-administrator/setting-administrator.component';
-import {MatFormField, MatLabel} from "@angular/material/form-field";
-import {MatButton} from "@angular/material/button";
-import {MatInput} from "@angular/material/input";
-import {MatToolbar} from "@angular/material/toolbar";
-import {HttpClientModule} from "@angular/common/http";
-import {provideAnimationsAsync} from "@angular/platform-browser/animations/async";
-import { StudentGroupComponent } from './list-students-for-student/pages/student-group/student-group.component';
-import {StudentService} from "./list-students-for-student/services/student.service";
+import { SettingsAdministratorComponent } from './settings/settings-administrator/settings-administrator.component';
+import { StudentGroupComponent } from './students-for-category/components/student-group/student-group.component';
+import {MatSelect} from "@angular/material/select";
+import {StudentService} from "./public/services/student/student.service";
 
 @NgModule({
   declarations: [
@@ -62,7 +49,7 @@ import {StudentService} from "./list-students-for-student/services/student.servi
     AddStudentDialogComponent,
     DeleteStudentDialogComponent,
     StudentGroupComponent,
-    SettingAdministratorComponent
+    SettingsAdministratorComponent
   ],
   imports: [
     BrowserModule,
@@ -95,7 +82,9 @@ import {StudentService} from "./list-students-for-student/services/student.servi
     MatNativeDateModule,
     MatInput,
     MatCalendar,
-  
+    MatSelect,
+    MatOption,
+
   ],
   providers: [
     provideAnimationsAsync(),

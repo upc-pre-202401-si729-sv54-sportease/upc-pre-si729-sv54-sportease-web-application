@@ -6,8 +6,8 @@ import {CategoryManagementComponent} from "./category/pages/category-management/
 import {StudentsManagementComponent} from "./students-for-category/pages/students-management/students-management.component";
 import {LoginComponent} from "./authentication/components/login/login.component";
 import {RegisterComponent} from "./authentication/components/register/register.component";
-import {SettingAdministratorComponent} from "./profiles/components/setting-administrator/setting-administrator.component";
-import {StudentGroupComponent} from "./list-students-for-student/pages/student-group/student-group.component";
+import {SettingsAdministratorComponent} from "./settings/settings-administrator/settings-administrator.component";
+import {StudentGroupComponent} from "./students-for-category/components/student-group/student-group.component";
 
 const routes: Routes = [
   { path: 'home-administrators', component: HomeAdministratorsComponent },
@@ -16,8 +16,8 @@ const routes: Routes = [
   { path: 'students-management/:yearCategory', component: StudentsManagementComponent},
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'settings', component: SettingAdministratorComponent },
-  { path: 'student-group/:yearCategory', component: StudentGroupComponent }
+  { path: 'settings', component: SettingsAdministratorComponent },
+  { path: 'student-group/:yearCategory', component: StudentGroupComponent },
   { path: '', redirectTo: '/login', pathMatch: 'full' }
 
 ];
