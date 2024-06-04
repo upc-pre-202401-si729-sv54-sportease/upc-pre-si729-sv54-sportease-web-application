@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {PaymentService} from "../../services/payment.service.spect.ts";
+import {PaymentService} from "../services/payment.service";
 
 @Component({
   selector: 'app-payment-management-component',
