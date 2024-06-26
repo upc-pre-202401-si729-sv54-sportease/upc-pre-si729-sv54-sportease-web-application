@@ -14,6 +14,6 @@ export class AppComponent {
     { path: '/login', title: 'Login' },
     { path: '/settings', title: 'Settings' },
     { path: '/student-group', title: 'Student Group' },
-    { path: '/register', title: 'Register'}
+    { path: '/register', title: 'Register'} 
   ]
 }
